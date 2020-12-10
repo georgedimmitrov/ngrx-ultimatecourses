@@ -87,6 +87,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   onUpdate(event: Pizza) {
+    this.store.dispatch(new fromStore.UpdatePizza(event));
     // this.pizzaService.updatePizza(event).subscribe(() => {
     //   this.router.navigate([`/products`]);
     // });
@@ -95,6 +96,7 @@ export class ProductItemComponent implements OnInit {
   onRemove(event: Pizza) {
     const remove = window.confirm('Are you sure?');
     if (remove) {
+      this.store.dispatch(new fromStore.RemovePizza(event));
       // this.pizzaService.removePizza(event).subscribe(() => {
       //   this.router.navigate([`/products`]);
       // });
