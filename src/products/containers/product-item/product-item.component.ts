@@ -15,6 +15,7 @@ import { ToppingsService } from '../../services/toppings.service';
 @Component({
   selector: 'product-item',
   styleUrls: ['product-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="product-item">
       <pizza-form
